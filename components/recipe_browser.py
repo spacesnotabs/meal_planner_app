@@ -43,7 +43,18 @@ def show():
 
                     st.subheader("Ingredients")
                     for ingredient in recipe.ingredients:
-                        st.write(f"• {ingredient['name']}: {ingredient['amount']} {ingredient['unit']}")
+                        ingredient_text = f"• {ingredient['name']}"
+                        if 'amount' in ingredient and 'unit' in ingredient:
+                            ingredient_text += f": {ingredient['amount']} {ingredient['unit']}"
+                        elif 'amount' in ingredient:
+                            ingredient_text += f": {ingredient['amount']}"
+                        elif 'unit' in ingredient:
+                            ingredient_text += f": {ingredient['unit']}"
+                        st.write(ingredient_text)
+
+                    if recipe.directions:
+                        st.subheader("Directions")
+                        st.write(recipe.directions)
 
                     st.subheader("Nutrition Information")
                     cols = st.columns(5)
