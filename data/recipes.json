@@ -1,0 +1,22 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "name": "Spaghetti Bolognese",
+      "cuisine": ["Italian"],
+      "diet": [],
+      "ingredients": [
+        {"name": "spaghetti", "amount": 100, "unit": "g"},
+        {"name": "ground beef", "amount": 200, "unit": "g"},
+        {"name": "tomato sauce", "amount": 200, "unit": "ml"}
+      ],
+      "nutrition": {
+        "calories": 600,
+        "protein": 35,
+        "carbs": 70,
+        "fat": 22,
+        "fiber": 4
+      }
+    }
+  ]
+}
