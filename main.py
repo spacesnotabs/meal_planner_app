@@ -1,5 +1,5 @@
 import streamlit as st
-from components import calendar, recipe_browser, nutrition_charts
+from components import calendar, recipe_browser, nutrition_charts, recipe_form
 from utils import nutrition, recipe_helper
 
 # Set page config
@@ -18,12 +18,14 @@ Plan your meals, track nutrition, and discover new recipes - all in one place!
 # Sidebar navigation
 page = st.sidebar.selectbox(
     "Navigate", 
-    ["Recipe Browser", "Meal Calendar", "Nutrition Tracking"]
+    ["Recipe Browser", "Add Recipe", "Meal Calendar", "Nutrition Tracking"]
 )
 
 # Main content
 if page == "Recipe Browser":
     recipe_browser.show()
+elif page == "Add Recipe":
+    recipe_form.show()
 elif page == "Meal Calendar":
     calendar.show()
 else:
