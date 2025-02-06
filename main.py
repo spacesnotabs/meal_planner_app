@@ -15,9 +15,6 @@ st.markdown("""
 Plan your meals, track nutrition, and discover new recipes - all in one place!
 """)
 
-# Show mini calendar at the top
-calendar.mini_calendar()
-
 # Sidebar navigation with standard buttons
 st.sidebar.title("Navigation")
 
