@@ -15,9 +15,10 @@ st.markdown("""
 Plan your meals, track nutrition, and discover new recipes - all in one place!
 """)
 
-# Sidebar navigation
-page = st.sidebar.selectbox(
-    "Navigate", 
+# Sidebar navigation with radio buttons instead of dropdown
+st.sidebar.title("Navigation")
+page = st.sidebar.radio(
+    "",  # Empty label since we have a title above
     ["Recipe Browser", "Add Recipe", "Meal Calendar", "Nutrition Tracking"]
 )
 
