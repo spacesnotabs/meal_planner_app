@@ -15,19 +15,29 @@ st.markdown("""
 Plan your meals, track nutrition, and discover new recipes - all in one place!
 """)
 
-# Sidebar navigation with radio buttons instead of dropdown
+# Sidebar navigation with standard buttons
 st.sidebar.title("Navigation")
-page = st.sidebar.radio(
-    "",  # Empty label since we have a title above
-    ["Recipe Browser", "Add Recipe", "Meal Calendar", "Nutrition Tracking"]
-)
+
+# Initialize session state for current page if not exists
+if 'current_page' not in st.session_state:
+    st.session_state.current_page = "Recipe Browser"
+
+# Navigation buttons
+if st.sidebar.button("Recipe Browser", use_container_width=True):
+    st.session_state.current_page = "Recipe Browser"
+if st.sidebar.button("Add Recipe", use_container_width=True):
+    st.session_state.current_page = "Add Recipe"
+if st.sidebar.button("Meal Calendar", use_container_width=True):
+    st.session_state.current_page = "Meal Calendar"
+if st.sidebar.button("Nutrition Tracking", use_container_width=True):
+    st.session_state.current_page = "Nutrition Tracking"
 
 # Main content
-if page == "Recipe Browser":
+if st.session_state.current_page == "Recipe Browser":
     recipe_browser.show()
-elif page == "Add Recipe":
+elif st.session_state.current_page == "Add Recipe":
     recipe_form.show()
-elif page == "Meal Calendar":
+elif st.session_state.current_page == "Meal Calendar":
     calendar.show()
 else:
     nutrition_charts.show()
